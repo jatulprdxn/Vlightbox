@@ -115,3 +115,62 @@ li {
   width: 75%; 
   margin: 0 auto;
 }
+
+
+.lightboxVideo {
+  height: 100vh;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+.lightboxVideo video {
+  width: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spread { animation: spreadit 1.5s forwards; }
+
+@keyframes spreadit {
+  10% {
+    width: 0;
+    height: 5px;
+  }
+
+  50% {
+    width: 30%;
+    height: 10px;
+  }
+
+  100% {
+    width: 30%;
+    height: 300px;
+  }
+}
+
+.closel {
+  border: none;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  background: none;
+  text-indent: -9999em;
+  outline: none;
+}
+
+.closel:before {
+  content: '\f057';
+  float: left;
+  cursor: pointer;
+  font: 900 40px "Font Awesome 5 Free";
+  text-indent: 0;
+  transition: .4s;
+}
+
+.closel:hover:before { color: #fff; }
